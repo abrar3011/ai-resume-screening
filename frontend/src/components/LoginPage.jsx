@@ -3,7 +3,7 @@ import './LoginPage.css'
 
 // Fixed HR credentials
 const HR_USERNAME = 'hr@company.com'
-const HR_PASSWORD = 'Hr@1234'
+const HR_PASSWORD = 'Hr@1234
 
 function LoginPage({ onLogin }) {
   const [username, setUsername] = useState('')
