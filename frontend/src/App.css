@@ -1,0 +1,629 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: #f0f4f8;
+  color: #333;
+}
+
+.app {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Header */
+.header {
+  background: linear-gradient(135deg, #2c3e50, #3498db);
+  color: white;
+  padding: 30px;
+  border-radius: 12px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.header h1 {
+  font-size: 2rem;
+  margin-bottom: 8px;
+}
+
+.header p {
+  opacity: 0.85;
+  font-size: 1rem;
+}
+
+/* Tabs */
+.tabs {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.tab {
+  flex: 1;
+  padding: 14px;
+  border: 2px solid transparent;
+  border-radius: 10px;
+  background: white;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 500;
+  transition: all 0.2s;
+}
+
+.tab:hover {
+  border-color: #3498db;
+  color: #3498db;
+}
+
+.tab.active {
+  background: #3498db;
+  color: white;
+  font-weight: bold;
+  border-color: #3498db;
+}
+
+/* Card */
+.card {
+  background: white;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+}
+
+.card h2 {
+  margin-bottom: 20px;
+  color: #2c3e50;
+  font-size: 1.3rem;
+}
+
+/* Form */
+.form-group {
+  margin-bottom: 16px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: 600;
+  color: #555;
+  font-size: 0.95rem;
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+  width: 100%;
+  padding: 11px 14px;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: border-color 0.2s;
+  background: white;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+  outline: none;
+  border-color: #3498db;
+}
+
+/* Button */
+.btn-primary {
+  width: 100%;
+  padding: 13px;
+  background: #3498db;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: opacity 0.2s;
+  margin-top: 4px;
+}
+
+.btn-primary:hover { opacity: 0.88; }
+.btn-primary:disabled { opacity: 0.6; cursor: not-allowed; }
+
+/* Messages */
+.success-msg {
+  background: #d4edda;
+  color: #155724;
+  padding: 12px 16px;
+  border-radius: 8px;
+  margin-top: 16px;
+  font-weight: 500;
+}
+
+.error-msg {
+  background: #f8d7da;
+  color: #721c24;
+  padding: 12px 16px;
+  border-radius: 8px;
+  margin-top: 16px;
+}
+
+/* Stats Grid */
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.stat-card {
+  background: white;
+  border-radius: 12px;
+  padding: 18px 12px;
+  text-align: center;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.07);
+}
+
+.stat-icon {
+  font-size: 1.6rem;
+  margin-bottom: 8px;
+}
+
+.stat-number {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #2c3e50;
+  margin-bottom: 4px;
+}
+
+.stat-label {
+  font-size: 0.78rem;
+  color: #888;
+  font-weight: 500;
+}
+
+/* Candidate Cards */
+.candidate-card {
+  background: #f8f9fa;
+  border: 1px solid #e0e0e0;
+  border-radius: 10px;
+  padding: 18px 20px;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.candidate-card:last-child { margin-bottom: 0; }
+
+/* Candidate card inner helpers */
+.score-col {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3px;
+  flex-shrink: 0;
+}
+
+.resume-label {
+  font-size: 0.78rem;
+  color: #3498db;
+  font-weight: normal;
+}
+
+.skills-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3px;
+  margin-top: 6px;
+}
+
+.no-skills {
+  color: #aaa;
+  font-size: 0.88rem;
+}
+
+.score-value {
+  font-size: 1.15rem;
+  line-height: 1;
+}
+
+.score-fraction {
+  font-size: 0.6rem;
+  line-height: 1;
+}
+
+.score-label {
+  font-size: 0.7rem;
+  font-weight: 500;
+  margin-top: 2px;
+}
+
+/* Empty / loading states */
+.center-message {
+  text-align: center;
+  color: #aaa;
+  padding: 32px 12px;
+}
+
+.empty-emoji {
+  font-size: 48px;
+  margin-bottom: 12px;
+}
+
+.helper-text {
+  font-size: 13px;
+  margin-top: 8px;
+}
+
+.click-hint {
+  color: #888;
+  font-size: 13px;
+  margin-bottom: 14px;
+  text-align: center;
+}
+
+.rank-badge {
+  font-size: 1.6rem;
+  min-width: 40px;
+  text-align: center;
+}
+
+.candidate-info { flex: 1; }
+
+.candidate-info h3 {
+  font-size: 1rem;
+  color: #2c3e50;
+  margin-bottom: 3px;
+}
+
+.candidate-info p {
+  color: #666;
+  font-size: 0.88rem;
+}
+
+.skills-tag {
+  background: #e8f4fd;
+  color: #2980b9;
+  padding: 3px 9px;
+  border-radius: 20px;
+  font-size: 0.78rem;
+  margin: 2px 2px 0 0;
+  display: inline-block;
+}
+
+.score-circle {
+  width: 68px;
+  height: 68px;
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  color: white;
+  font-size: 1.15rem;
+}
+
+.score-high { background: #27ae60; }
+.score-mid  { background: #f39c12; }
+.score-low  { background: #e74c3c; }
+
+/* Responsive — base */
+
+/* ─── Tablet / small laptop (≤ 768 px) ─────────────────────────── */
+@media (max-width: 768px) {
+  .app {
+    padding: 12px;
+  }
+
+  .header {
+    padding: 20px 16px;
+  }
+
+  .header h1 {
+    font-size: 1.5rem;
+  }
+
+  .header p {
+    font-size: 0.85rem;
+  }
+
+  .card {
+    padding: 20px 16px;
+  }
+
+  /* Stats: 2-up on tablet */
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+
+  .stat-card {
+    padding: 14px 10px;
+  }
+
+  .stat-number {
+    font-size: 1.3rem;
+  }
+
+  .stat-label {
+    font-size: 0.72rem;
+  }
+
+  /* Candidate card: row-wrap on tablet */
+  .candidate-card {
+    flex-wrap: wrap;
+    gap: 12px;
+    padding: 14px 16px;
+  }
+
+  .rank-badge {
+    min-width: 32px;
+    font-size: 1.3rem;
+  }
+
+  .score-circle {
+    width: 56px;
+    height: 56px;
+    font-size: 1rem;
+  }
+
+  .score-fraction {
+    font-size: 0.5rem;
+  }
+
+  .delete-btn {
+    width: 34px;
+    height: 34px;
+    font-size: 0.9rem;
+  }
+}
+
+/* ─── Mobile (≤ 480 px) ─────────────────────────────────────────── */
+@media (max-width: 480px) {
+  .app {
+    padding: 8px;
+  }
+
+  .header {
+    padding: 16px 12px;
+    border-radius: 8px;
+  }
+
+  .header h1 {
+    font-size: 1.25rem;
+  }
+
+  .header p {
+    font-size: 0.78rem;
+  }
+
+  .tabs {
+    gap: 6px;
+  }
+
+  .tab {
+    padding: 10px 8px;
+    font-size: 0.85rem;
+  }
+
+  .card {
+    padding: 14px 12px;
+    border-radius: 10px;
+  }
+
+  .card h2 {
+    font-size: 1.05rem;
+    margin-bottom: 14px;
+  }
+
+  .form-group label {
+    font-size: 0.85rem;
+  }
+
+  .form-group input,
+  .form-group textarea,
+  .form-group select {
+    padding: 9px 10px;
+    font-size: 0.9rem;
+  }
+
+  /* Stats: 2-up on mobile */
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+  }
+
+  .stat-card {
+    padding: 12px 8px;
+  }
+
+  .stat-icon {
+    font-size: 1.2rem;
+    margin-bottom: 4px;
+  }
+
+  .stat-number {
+    font-size: 1.15rem;
+  }
+
+  .stat-label {
+    font-size: 0.68rem;
+  }
+
+  /* Candidate card — stacked on mobile */
+  .candidate-card {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 14px 12px;
+  }
+
+  .rank-badge {
+    font-size: 1.1rem;
+    min-width: auto;
+  }
+
+  /* Row: name left, score + delete right */
+  .candidate-card > .rank-badge {
+    order: 1;
+  }
+
+  .candidate-card > .candidate-info {
+    order: 2;
+    width: 100%;
+    flex: none;
+  }
+
+  .candidate-card > .score-col {
+    order: 3;
+    align-self: flex-end;
+    margin-left: auto;
+  }
+
+  .candidate-card > .delete-btn {
+    order: 4;
+  }
+
+  .candidate-info h3 {
+    font-size: 0.9rem;
+  }
+
+  .resume-label {
+    font-size: 0.78rem;
+  }
+
+  .candidate-info p {
+    font-size: 0.8rem;
+  }
+
+  .skills-tag {
+    font-size: 0.7rem;
+    padding: 2px 7px;
+  }
+
+  .score-circle {
+    width: 50px;
+    height: 50px;
+    font-size: 0.9rem;
+  }
+
+  .score-value {
+    font-size: 1rem;
+  }
+
+  .score-fraction {
+    font-size: 0.45rem;
+  }
+
+  .score-label {
+    font-size: 0.7rem;
+    margin-top: 2px;
+  }
+
+  .delete-btn {
+    width: 32px;
+    height: 32px;
+    font-size: 0.85rem;
+  }
+
+  /* Shared message helpers */
+  .center-message {
+    text-align: center;
+    color: #aaa;
+    padding: 32px 12px;
+  }
+
+  .empty-emoji {
+    font-size: 36px;
+    margin-bottom: 10px;
+  }
+
+  .center-message p {
+    font-size: 0.9rem;
+  }
+
+  .helper-text {
+    font-size: 0.78rem !important;
+    margin-top: 6px !important;
+    color: #bbb !important;
+  }
+
+  .click-hint {
+    color: #888;
+    font-size: 0.78rem;
+    margin-bottom: 10px;
+    text-align: center;
+  }
+}
+
+/* ─── Extra-small (≤ 360 px) ───────────────────────────────────── */
+@media (max-width: 360px) {
+  .stats-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 6px;
+  }
+
+  .stat-card {
+    padding: 10px 6px;
+  }
+
+  .stat-number {
+    font-size: 1rem;
+  }
+
+  .candidate-card {
+    gap: 8px;
+    padding: 12px 10px;
+  }
+
+  .score-circle {
+    width: 44px;
+    height: 44px;
+    font-size: 0.8rem;
+  }
+
+  .score-value {
+    font-size: 0.85rem;
+  }
+
+  .skills-tag {
+    font-size: 0.65rem;
+    padding: 2px 5px;
+  }
+}
+
+/* ─── Landscape phones (≤ 600 px AND height ≤ 500 px) ──────────── */
+@media (max-width: 600px) and (max-height: 500px) {
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Delete Button */
+.delete-btn {
+  background: #fff0f0;
+  border: 1.5px solid #e74c3c;
+  color: #e74c3c;
+  width: 38px;
+  height: 38px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+  flex-shrink: 0;
+}
+
+.delete-btn:hover {
+  background: #e74c3c;
+  color: white;
+}
+
+.delete-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
