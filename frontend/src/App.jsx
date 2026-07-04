@@ -19,7 +19,7 @@ function App() {
       <header className="header">
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
           <div>
-            <h1>🤖 AI Resume Screener</h1>
+            <h1>AI Resume Screener</h1>
             <p>Smart candidate ranking for IT roles</p>
           </div>
           {/* Logout button */}
@@ -36,7 +36,7 @@ function App() {
               fontWeight: '500'
             }}
           >
-            🚪 Logout
+             Logout
           </button>
         </div>
       </header>
@@ -46,13 +46,13 @@ function App() {
           className={activeTab === 'upload' ? 'tab active' : 'tab'}
           onClick={() => setActiveTab('upload')}
         >
-          📤 Upload Resume
+          Upload Resume
         </button>
         <button
           className={activeTab === 'rankings' ? 'tab active' : 'tab'}
           onClick={() => setActiveTab('rankings')}
         >
-          🏆 View Rankings
+           View Rankings
         </button>
       </nav>
 

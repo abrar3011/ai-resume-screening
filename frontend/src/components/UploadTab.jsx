@@ -108,7 +108,7 @@ function UploadTab() {
 
   return (
     <div className="card">
-      <h2>📤 Upload Candidate Resume</h2>
+      <h2>Upload Candidate Resume</h2>
 
       <div className="form-group">
         <label>Candidate Name</label>
@@ -125,7 +125,7 @@ function UploadTab() {
         <select value={role} onChange={(e) => setRole(e.target.value)}>
           <option value="">-- Select IT Role --</option>
 
-          <optgroup label="🎨 Frontend">
+          <optgroup label="Frontend">
             <option>Frontend Developer</option>
             <option>React Developer</option>
             <option>Angular Developer</option>
@@ -133,7 +133,7 @@ function UploadTab() {
             <option>UI/UX Designer</option>
           </optgroup>
 
-          <optgroup label="⚙️ Backend">
+          <optgroup label="Backend">
             <option>Backend Developer</option>
             <option>Python Developer</option>
             <option>Django Developer</option>
@@ -143,20 +143,20 @@ function UploadTab() {
             <option>PHP Developer</option>
           </optgroup>
 
-          <optgroup label="🔄 Full Stack">
+          <optgroup label="Full Stack">
             <option>Full Stack Developer</option>
             <option>MERN Stack Developer</option>
             <option>MEAN Stack Developer</option>
           </optgroup>
 
-          <optgroup label="📱 Mobile">
+          <optgroup label="Mobile">
             <option>Android Developer</option>
             <option>iOS Developer</option>
             <option>React Native Developer</option>
             <option>Flutter Developer</option>
           </optgroup>
 
-          <optgroup label="🤖 Data & AI">
+          <optgroup label="Data & AI">
             <option>Data Scientist</option>
             <option>Data Analyst</option>
             <option>Machine Learning Engineer</option>
@@ -164,32 +164,32 @@ function UploadTab() {
             <option>Business Intelligence Analyst</option>
           </optgroup>
 
-          <optgroup label="☁️ DevOps & Cloud">
+          <optgroup label="DevOps & Cloud">
             <option>DevOps Engineer</option>
             <option>AWS Cloud Engineer</option>
             <option>Azure Cloud Engineer</option>
             <option>Docker & Kubernetes Engineer</option>
           </optgroup>
 
-          <optgroup label="🗄️ Database">
+          <optgroup label="Database">
             <option>Database Administrator</option>
             <option>MySQL Developer</option>
             <option>MongoDB Developer</option>
           </optgroup>
 
-          <optgroup label="🧪 Testing">
+          <optgroup label="Testing">
             <option>QA Engineer</option>
             <option>Manual Tester</option>
             <option>Automation Tester</option>
           </optgroup>
 
-          <optgroup label="🔒 Security">
+          <optgroup label="Security">
             <option>Cybersecurity Analyst</option>
             <option>Ethical Hacker</option>
             <option>Network Security Engineer</option>
           </optgroup>
 
-          <optgroup label="💼 Other IT">
+          <optgroup label="Other IT">
             <option>Software Engineer</option>
             <option>Systems Analyst</option>
             <option>IT Support Engineer</option>
@@ -216,7 +216,7 @@ function UploadTab() {
         onClick={handleUpload}
         disabled={loading}
       >
-        {loading ? '⏳ Analyzing Resume with AI...' : ' Upload & Score Resume'}
+        {loading ? 'Analyzing Resume with AI...' : ' Upload & Score Resume'}
       </button>
 
       {message && (

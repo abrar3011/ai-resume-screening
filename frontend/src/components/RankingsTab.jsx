@@ -85,7 +85,7 @@ function RankingsTab() {
     <div>
       {/* Role Selector */}
       <div className="card">
-        <h2>🏆 Candidate Rankings</h2>
+        <h2>Candidate Rankings</h2>
         <div className="form-group" style={{ marginBottom: 0 }}>
           <label>Select Role to View Rankings</label>
           <select onChange={(e) => handleRoleChange(e.target.value)} defaultValue="">
@@ -131,14 +131,14 @@ function RankingsTab() {
 
         {!loading && !selectedJob && (
           <div className="center-message">
-            <div className="empty-emoji">👆</div>
+            <div className="empty-emoji"></div>
             <p>Select a role above to see candidate rankings</p>
           </div>
         )}
 
         {!loading && selectedJob && totalCandidates === 0 && (
           <div className="center-message">
-            <div className="empty-emoji">📭</div>
+            <div className="empty-emoji"></div>
             <p>No candidates found for <strong>{selectedJob.title}</strong>.</p>
             <p className="helper-text">Go to Upload tab to add candidates.</p>
           </div>
@@ -147,7 +147,7 @@ function RankingsTab() {
         {/* Click hint */}
         {totalCandidates > 0 && (
           <p className="click-hint">
-            👆 Click candidate card to open resume &nbsp;|&nbsp; 🗑️ Click delete to remove
+             Click candidate card to open resume &nbsp;|&nbsp;  Click delete to remove
           </p>
         )}
 
@@ -165,7 +165,7 @@ function RankingsTab() {
             <div className="candidate-info">
               <h3>
                 {candidate.name}
-                <span className="resume-label">📄 View Resume</span>
+                <span className="resume-label">View Resume</span>
               </h3>
               <p>{candidate.email}</p>
               <p className="skills-row">
